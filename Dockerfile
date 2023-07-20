@@ -1,4 +1,7 @@
-FROM pytorch/pytorch:2.0.0-cuda11.7-cudnn8-devel
+# see https://docs.nvidia.com/deeplearning/frameworks/support-matrix/index.html
+# we want an image with support for the sm_90 compute capability, which is
+# needed for Hopper architecture / H100 GPUs
+FROM nvcr.io/nvidia/pytorch:23.06-py3
 
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
